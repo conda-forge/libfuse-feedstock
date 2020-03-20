@@ -1,5 +1,5 @@
 {% set name = "libfuse" %}
-{% set version = "3.9.0" %}
+{% set version = "3.9.1" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz
-  sha256: fcb7079a1bb4e510377b427d1c5c37c349281d498e249ae0c2379b4cf50059c2
+  sha256: 1bafcfd6c66ba35b7b0beb822532a9106eb8409ad6cde988888fde85f89be645
 
 build:
   number: 0
-  skip: True  # [not linux]
+  skip: true  # [not linux]
 
 requirements:
   build:
@@ -35,7 +35,7 @@ about:
   license: LGPL-2.1
   license_file: LICENSE
   license_family: LGPL
-  summary: 'The reference implementation of the Linux FUSE (Filesystem in Userspace) interface'
+  summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
 
 extra:
   recipe-maintainers:
