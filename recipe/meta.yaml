@@ -1,5 +1,5 @@
 {% set name = "libfuse" %}
-{% set version = "3.9.1" %}
+{% set version = "3.9.2" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz
-  sha256: 1bafcfd6c66ba35b7b0beb822532a9106eb8409ad6cde988888fde85f89be645
+  sha256: 6999b6d48e7c0a79628fa901f6e66def3513cab4ffdd8097821e7dc3cdeae08a
 
 build:
   number: 0
