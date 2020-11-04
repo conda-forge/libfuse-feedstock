@@ -15,7 +15,9 @@ build:
   number: 1
   skip: true  # [not linux]
   run_exports:
-    - {{ pin_subpackage('libfuse', max_pin='x.x') }}
+    # Seems to be quite stable between minor versions
+    # https://abi-laboratory.pro/?view=timeline&l=libfuse
+    - {{ pin_subpackage('libfuse', max_pin='x') }}
 
 requirements:
   build:
