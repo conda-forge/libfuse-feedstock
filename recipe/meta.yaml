@@ -1,17 +1,23 @@
-{% set name = "libfuse" %}
 {% set version = "3.10.0" %}
 
 package:
-  name: {{ name }}
+  name: libfuse
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ name }}/{{ name }}/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz
+  url: https://github.com/libfuse/libfuse/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz
   sha256: 26517954567f237a7dbcb532755ba0d2c77575c5d90db7566b6e40ec05b0a039
+  patches:
+    - 0001-Install-fusermount-init-script-into-sysconfdir.patch
+    - 0002-Enable-building-utils-on-CentOS-6.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
+  run_exports:
+    # Seems to be quite stable between minor versions
+    # https://abi-laboratory.pro/?view=timeline&l=libfuse
+    - {{ pin_subpackage('libfuse', max_pin='x') }}
 
 requirements:
   build:
@@ -29,10 +35,12 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libfuse3${SHLIB_EXT}
     - test -f ${PREFIX}/include/fuse3/fuse.h
+    - 'mount.fuse3 2>&1 | grep -qF usage:'
+    - fusermount3 -V
 
 about:
   home: https://github.com/libfuse/libfuse
-  license: LGPL-2.1
+  license: LGPL-2.1-only AND GPL-2.0-only
   license_file: LICENSE
   license_family: LGPL
   summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
@@ -40,3 +48,4 @@ about:
 extra:
   recipe-maintainers:
     - asafkahlon
+    - mbargull
