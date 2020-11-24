@@ -1,11 +1,13 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
-meson \
+export MOUNT_FUSE_PATH=${PREFIX}/bin
+export UDEV_RULES_PATH=${PREFIX}/etc/udev/rules.d
+export INIT_D_PATH=${PREFIX}/etc/init.d
+
+./configure \
   --prefix="${PREFIX}" \
-  --libdir=lib \
-  --sbindir=bin \
-  -Dexamples=false \
-  -Duseroot=false -Dudevrulesdir="${PREFIX}/lib/udev/rules.d" \
-  build
-ninja -C build/
-ninja -C build/ install
+  --sbindir=${PREFIX}/bin
+
+make
+
+make install
