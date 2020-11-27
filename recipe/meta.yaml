@@ -35,8 +35,10 @@ test:
 
 about:
   home: https://github.com/libfuse/libfuse
-  license: GPL-2.0-or-later
-  license_file: COPYING
+  license: LGPL-2.1-only AND GPL-2.0-only
+  license_file:
+    - COPYING.LIB
+    - COPYING
   license_family: GPL
   summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
 
