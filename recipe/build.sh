@@ -6,6 +6,7 @@ export INIT_D_PATH=${PREFIX}/etc/init.d
 
 ./configure \
   --prefix="${PREFIX}" \
+  --enable-static=no \
   --sbindir=${PREFIX}/bin
 
 make
