@@ -3,7 +3,7 @@ About libfuse
 
 Home: https://github.com/libfuse/libfuse
 
-Package license: LGPL-2.1-only AND GPL-2.0-only
+Package license: GPL-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libfuse-feedstock/blob/master/LICENSE.txt)
 
@@ -135,4 +135,5 @@ Feedstock Maintainers
 
 * [@asafkahlon](https://github.com/asafkahlon/)
 * [@mbargull](https://github.com/mbargull/)
+* [@xmnlab](https://github.com/xmnlab/)
 
