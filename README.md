@@ -3,7 +3,7 @@ About libfuse
 
 Home: https://github.com/libfuse/libfuse
 
-Package license: GPL-2.0
+Package license: LGPL-2.1-only AND GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libfuse-feedstock/blob/master/LICENSE.txt)
 
