@@ -135,4 +135,5 @@ Feedstock Maintainers
 
 * [@asafkahlon](https://github.com/asafkahlon/)
 * [@mbargull](https://github.com/mbargull/)
+* [@xmnlab](https://github.com/xmnlab/)
 
