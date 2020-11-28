@@ -41,8 +41,11 @@ test:
 about:
   home: https://github.com/libfuse/libfuse
   license: LGPL-2.1-only AND GPL-2.0-only
-  license_file: LICENSE
-  license_family: LGPL
+  license_file:
+    - LICENSE
+    - LGPL2.txt
+    - GPL2.txt
+  license_family: GPL
   summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
 
 extra:
