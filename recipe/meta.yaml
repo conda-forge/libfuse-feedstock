@@ -12,7 +12,7 @@ source:
     - 0002-Enable-building-utils-on-CentOS-6.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   run_exports:
     # Seems to be quite stable between minor versions
@@ -35,7 +35,7 @@ test:
     - test -f ${PREFIX}/lib/libfuse3${SHLIB_EXT}
     - test -f ${PREFIX}/include/fuse3/fuse.h
     - 'mount.fuse3 2>&1 | grep -qF usage:'
-    - fusermount3 -V
+    - ${PREFIX}/sbin/fusermount3 -V
 
 about:
   home: https://github.com/libfuse/libfuse
