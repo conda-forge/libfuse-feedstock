@@ -13,5 +13,7 @@ export INIT_D_PATH="${PREFIX}/etc/init.d"
 make
 make install
 
+# Install fusermount into sbin.
+# See https://github.com/conda-forge/libfuse-feedstock/issues/13
 mkdir -p "${PREFIX}/sbin"
 mv "${PREFIX}/bin/fusermount" "${PREFIX}/sbin/fusermount"
