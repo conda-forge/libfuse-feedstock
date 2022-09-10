@@ -12,7 +12,7 @@ source:
     - 0002-Enable-building-utils-on-CentOS-6.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   run_exports:
     # Seems to be quite stable between minor versions
