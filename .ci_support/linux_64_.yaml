@@ -1,7 +1,7 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '10'
+- '11'
 cdt_name:
 - cos6
 channel_sources:
@@ -11,9 +11,6 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libiconv:
-- '1.17'
-pin_run_as_build:
-  libiconv:
-    max_pin: x.x
+- '1'
 target_platform:
 - linux-64
