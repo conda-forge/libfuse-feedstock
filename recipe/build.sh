@@ -5,7 +5,9 @@ meson \
   --libdir=lib \
   --sbindir=bin \
   -Dexamples=false \
-  -Duseroot=false -Dudevrulesdir="${PREFIX}/lib/udev/rules.d" \
+  -Duseroot=false \
+  -Dudevrulesdir="${PREFIX}/lib/udev/rules.d" \
+  -Dinitscriptdir="${PREFIX}/etc/init.d" \
   build
 ninja -C build/
 ninja -C build/ install

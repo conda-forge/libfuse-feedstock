@@ -1,11 +1,11 @@
-About libfuse
-=============
+About libfuse3-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libfuse-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/libfuse/libfuse
 
 Package license: LGPL-2.1-only AND GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libfuse-feedstock/blob/main/LICENSE.txt)
 
 Summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
 
@@ -13,14 +13,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/libfuse-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/libfuse-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -37,21 +30,21 @@ Current build status
               <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9195&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libfuse-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libfuse-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>linux_aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9195&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libfuse-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libfuse-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>linux_ppc64le</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9195&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libfuse-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libfuse-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -67,53 +60,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libfuse-green.svg)](https://anaconda.org/conda-forge/libfuse) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libfuse.svg)](https://anaconda.org/conda-forge/libfuse) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libfuse.svg)](https://anaconda.org/conda-forge/libfuse) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libfuse.svg)](https://anaconda.org/conda-forge/libfuse) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libfuse3-green.svg)](https://anaconda.org/conda-forge/libfuse3) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libfuse3.svg)](https://anaconda.org/conda-forge/libfuse3) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libfuse3.svg)](https://anaconda.org/conda-forge/libfuse3) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libfuse3.svg)](https://anaconda.org/conda-forge/libfuse3) |
 
-Installing libfuse
-==================
+Installing libfuse3
+===================
 
-Installing `libfuse` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libfuse3` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libfuse` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libfuse3` can be installed with `conda`:
 
 ```
-conda install libfuse
-```
-
-or with `mamba`:
-
-```
-mamba install libfuse
-```
-
-It is possible to list all of the versions of `libfuse` available on your platform with `conda`:
-
-```
-conda search libfuse --channel conda-forge
+conda install libfuse3
 ```
 
 or with `mamba`:
 
 ```
-mamba search libfuse --channel conda-forge
+mamba install libfuse3
+```
+
+It is possible to list all of the versions of `libfuse3` available on your platform with `conda`:
+
+```
+conda search libfuse3 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libfuse3 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libfuse --channel conda-forge
+mamba repoquery search libfuse3 --channel conda-forge
 
-# List packages depending on `libfuse`:
-mamba repoquery whoneeds libfuse --channel conda-forge
+# List packages depending on `libfuse3`:
+mamba repoquery whoneeds libfuse3 --channel conda-forge
 
-# List dependencies of `libfuse`:
-mamba repoquery depends libfuse --channel conda-forge
+# List dependencies of `libfuse3`:
+mamba repoquery depends libfuse3 --channel conda-forge
 ```
 
 
@@ -135,7 +128,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
@@ -158,17 +151,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libfuse-feedstock
-==========================
+Updating libfuse3-feedstock
+===========================
 
-If you would like to improve the libfuse recipe or build a new
+If you would like to improve the libfuse3 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libfuse-feedstock are
+Note that all branches in the conda-forge/libfuse3-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
@@ -184,6 +177,7 @@ Feedstock Maintainers
 =====================
 
 * [@asafkahlon](https://github.com/asafkahlon/)
+* [@hmaarrfk](https://github.com/hmaarrfk/)
 * [@mbargull](https://github.com/mbargull/)
 * [@xmnlab](https://github.com/xmnlab/)
 
