@@ -3,6 +3,9 @@
 package:
   # We choose to follow ubuntu and fedora to name the package libfuse3
   # to allow co-installation with libfuse (version 2)
+  # The libfuse-feedstock has two branches:
+  #   - main: which build the package libfuse3 in Aug 30, 2025+ and libfuse (version 3) before that
+  #   - v2.x: which build sthe package libfuse (version 2)
   name: libfuse3
   version: {{ version }}
 
@@ -28,7 +31,8 @@ requirements:
   host:
     - libiconv
   run_constrained:
-    # Don't allow installation with older libfuse packages called libfuse
+    # Don't allow installation with older libfuse (version3) packages called libfuse
+    # but allow co-installation with libfuse (version 2) packages called libfuse
     - libfuse <3
 
 test:
