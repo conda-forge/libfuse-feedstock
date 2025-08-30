@@ -1,7 +1,7 @@
 {% set version = "2.9.9" %}
 
 package:
-  name: libfuse
+  name: libfuse2
   version: {{ version }}
 
 source:
@@ -9,25 +9,31 @@ source:
   sha256: d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     # Seems to be quite stable between minor versions
     # https://abi-laboratory.pro/?view=timeline&l=libfuse
-    - {{ pin_subpackage('libfuse', max_pin='x') }}
+    - {{ pin_subpackage('libfuse2', max_pin='x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - pkg-config
+    - make
   host:
     - libiconv
-  run:
-    - libiconv
+  run_constrained:
+    # We renamed the package libfuse -> libfuse2 for the
+    # to allow both libfuse2 and libfuse>3 to coexist
+    # However, this caused us to have to create a constraint to avoid
+    # cloberring files between libfuse==2.* and libfuse2
+    - libfuse >3
 
 test:
   commands:
     - test -f ${PREFIX}/lib/libfuse${SHLIB_EXT}
+    - test -f ${PREFIX}/include/fuse.h
     - test -f ${PREFIX}/include/fuse/fuse.h
     - 'mount.fuse 2>&1 | grep -qF usage:'
     - ${PREFIX}/sbin/fusermount -V
@@ -46,3 +52,4 @@ extra:
     - asafkahlon
     - mbargull
     - xmnlab
+    - hmaarrfk
