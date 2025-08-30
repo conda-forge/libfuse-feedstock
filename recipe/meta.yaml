@@ -1,18 +1,18 @@
-{% set version = "3.10.4" %}
+{% set version = "3.17.4" %}
 
 package:
   name: libfuse
   version: {{ version }}
 
 source:
-  url: https://github.com/libfuse/libfuse/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz
-  sha256: 9365b74fd8471caecdb3cc5adf25a821f70a931317ee9103d15bd39089e3590d
+  url: https://github.com/libfuse/libfuse/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.gz
+  sha256: df9e40ae927b73dc702d0bce7925c0c618af47ad0b13204fbf2be66e54d8528b
   patches:
     - 0001-Install-fusermount-init-script-into-sysconfdir.patch
     - 0002-Enable-building-utils-on-CentOS-6.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     # Seems to be quite stable between minor versions
@@ -22,6 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - meson
     - ninja
     - pkg-config
