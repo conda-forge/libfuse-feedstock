@@ -1,7 +1,9 @@
 {% set version = "3.10.4" %}
 
 package:
-  name: libfuse
+  # We choose to follow ubuntu and fedora to name the package libfuse3
+  # to allow co-installation with libfuse (version 2)
+  name: libfuse3
   version: {{ version }}
 
 source:
@@ -17,18 +19,20 @@ build:
   run_exports:
     # Seems to be quite stable between minor versions
     # https://abi-laboratory.pro/?view=timeline&l=libfuse
-    - {{ pin_subpackage('libfuse', max_pin='x') }}
+    - {{ pin_subpackage('libfuse3', max_pin='x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - meson
     - ninja
     - pkg-config
   host:
     - libiconv
-  run:
-    - libiconv
+  run_constrained:
+    # Don't allow installation with older libfuse packages called libfuse
+    - libfuse <3
 
 test:
   commands:
@@ -52,3 +56,4 @@ extra:
     - asafkahlon
     - mbargull
     - xmnlab
+    - hmaarrfk
