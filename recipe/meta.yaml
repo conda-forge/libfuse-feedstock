@@ -14,7 +14,7 @@ source:
   sha256: bcd19582c5e30f7fe45dd86a5540e998590aa01903afc7ebcbeea6c8ac5421ee
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   run_exports:
     # Seems to be quite stable between minor versions
